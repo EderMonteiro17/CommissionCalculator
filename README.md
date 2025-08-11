@@ -7,6 +7,16 @@ Your job is to finish the technical task:
  - Implement the calculation in the C# controller
 Develop this at **production quality**.
 The code is imcomplete on purpose, it's a simulation of how most work is done, good luck:
+
+## How to Run
+Change the path to where you downloaded the project and run:
+```powershell
+Set-Location "C:\your\path\to\CommissionCalculator"
+.\start-app.ps1
+```
+- This starts both the API and React app
+- Press **Ctrl+C** to stop the application
+
 # Business rules
  At FCamara, we pay 20% commission for Local Sales and 35% commission on Foreign Sales.
  Our competitons only pay 2% commission and 7.55% on Foreign Sales.
