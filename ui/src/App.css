@@ -1,28 +1,208 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-header {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 40px 20px;
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.App-header h1 {
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e1e8ed;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+button[type="submit"] {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+}
+
+button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error-message {
+  background-color: #fee;
+  border: 1px solid #fcc;
+  color: #c33;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.results-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.results-container h3 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
-
-.App-link {
-  color: #61dafb;
+.result-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.result-card:hover {
+  transform: translateY(-5px);
+}
+
+.result-card.fcamara {
+  border-top: 5px solid #27ae60;
+}
+
+.result-card.competitor {
+  border-top: 5px solid #e74c3c;
+}
+
+.result-card h4 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-size: 1.4rem;
+}
+
+.commission-amount {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.result-card.fcamara .commission-amount {
+  color: #27ae60;
+}
+
+.result-card.competitor .commission-amount {
+  color: #e74c3c;
+}
+
+.breakdown {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.breakdown p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.advantage {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(39, 174, 96, 0.3);
+}
+
+.advantage h4 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.advantage-amount {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0% {
+    opacity: 1;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    opacity: 0.5;
   }
+  100% {
+    opacity: 1;
+  }
+}
+
+button[type="submit"]:disabled {
+  animation: pulse 1.5s infinite;
 }
