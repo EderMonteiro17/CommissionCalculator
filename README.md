@@ -8,14 +8,7 @@ Your job is to finish the technical task:
 Develop this at **production quality**.
 The code is imcomplete on purpose, it's a simulation of how most work is done, good luck:
 
-## How to Run
-Change the path to where you downloaded the project and run:
-```powershell
-Set-Location "C:\your\path\to\CommissionCalculator"
-.\start-app.ps1
-```
-- This starts both the API and React app
-- Press **Ctrl+C** to stop the application
+
 
 # Business rules
  At FCamara, we pay 20% commission for Local Sales and 35% commission on Foreign Sales.
@@ -30,3 +23,13 @@ FCamara Commission: £550
 Competitor Commission: £95.5
     Local Sales Commission = 2% * 10 sales * 100 average sale
     Foreign Sales Commission = 7.55% * 10 sales * 100 average sales
+
+
+## How to Run
+Change the path to where you downloaded the project and run:
+```powershell
+Set-Location "C:\your\path\to\CommissionCalculator"
+.\start-app.ps1
+```
+- This starts both the API and React app
+- Press **Ctrl+C** to stop the application
